@@ -8,4 +8,5 @@ export interface PitStopRepository {
   getPaginatedPitStops(page?: number, quantity?: number, fields?: ListSearchValues[]): Promise<PitStop[]>
   updatePitStop(pitStop: PitStop, id: string): Promise<void>
   addPitStop(pitStop: PitStop): Promise<void>
+  findByLocation(lat: number, lng: number, radius: number): Promise<PitStop[]>
 }

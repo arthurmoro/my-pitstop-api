@@ -1,15 +1,15 @@
 import { Address } from "../../../entities/Address";
 import { PitStop } from "../../../entities/PitStop";
 import { PitStopRepository } from "../../../repository/PitStop/PitStopRepository";
-import { AddPitStopType } from "./AddPitStopType";
+import { UpdatePitStopType } from "./UpdatePitStop.types";
 
-export class AddPitStop {
+export class UpdatePitStop {
 
   constructor(private pitStopRepository: PitStopRepository) { };
 
-  async execute(data: AddPitStopType): Promise<void> {
+  async execute(data: UpdatePitStopType, id: string): Promise<void> {
     data.address = new Address(data.address);
     const pitStop = new PitStop(data);
-    await this.pitStopRepository.addPitStop(pitStop);
+    await this.pitStopRepository.updatePitStop(pitStop, id);
   }
-}
+} 

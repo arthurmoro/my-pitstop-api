@@ -34,4 +34,8 @@ export class PitStopRepositoryInMemory implements PitStopRepository {
   async addPitStop(pitStop: PitStop): Promise<void> {
     this.pitStops.push(pitStop)
   }
+
+  async findByLocation(lat: number, lng: number, radius: number): Promise<PitStop[]> {
+    throw new Error("Method not implemented.");
+  }
 }
