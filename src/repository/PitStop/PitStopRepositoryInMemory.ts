@@ -1,4 +1,3 @@
-import { Example } from "../../entities/Example";
 import { PitStop } from "../../entities/PitStop";
 import { PitStopRepository } from "./PitStopRepository";
 
